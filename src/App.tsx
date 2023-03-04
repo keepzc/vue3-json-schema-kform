@@ -105,7 +105,10 @@ export default defineComponent({
         // some thing
       }
     }
-
+    const handleChange = (v: any) => {
+      demo.data = v
+      demo.dataCode = toJson(v)
+    }
     const handleSchemaChange = (v: string) => handleCodeChange('schema', v)
     const handleDataChange = (v: string) => handleCodeChange('data', v)
     const handleUISchemaChange = (v: string) => handleCodeChange('uiSchema', v)
@@ -157,7 +160,11 @@ export default defineComponent({
               </div>
             </div>
             <div class={classes.form}>
-              <SchemaForm />
+              <SchemaForm
+                schema={demo.schema}
+                onChange={handleChange}
+                value={demo.data}
+              />
             </div>
           </div>
         </div>
