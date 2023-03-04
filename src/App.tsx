@@ -11,9 +11,6 @@ type UISchema = any
 function toJson(data: any) {
   return JSON.stringify(data, null, 2)
 }
-const schema = {
-  type: 'string',
-}
 const useStyles = createUseStyles({
   container: {
     display: 'flex',
